@@ -28,10 +28,15 @@ const OSInfo: TOSInfo[] = [
     content: os.cpus(), // 注意数据结构, 其实有 model 就满足
   },
   {
-    name: "平台文件路径",
-    name_en: "devNull",
-    content: os.devNull,
+    name: "网络接口对象",
+    name_en: "networkInterfaces",
+    content: os.networkInterfaces(), // 对象
   },
+  // {
+  //   name: "平台文件路径",
+  //   name_en: "devNull",
+  //   content: os.devNull,
+  // },
   {
     name: "剩余内存",
     name_en: "freemem",
@@ -46,11 +51,6 @@ const OSInfo: TOSInfo[] = [
     name: "系统主机名",
     name_en: "hostname",
     content: os.hostname(),
-  },
-  {
-    name: "网络接口对象",
-    name_en: "networkInterfaces",
-    content: os.networkInterfaces(), // 对象
   },
   {
     name: "操作系统平台",

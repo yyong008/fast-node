@@ -12,18 +12,19 @@ import useSocket from "./useSocket";
 
 const App = () => {
   const [data, setData] = useSocket();
-  console.log("data", data);
 
   const onConnect = () => {};
   const onDisconnect = () => {};
   return (
-    <div className="bg-slate-900 w-screen h-100 pb-8">
+    <div className=" w-screen h-100 pb-8 bg-gradient-to-r from-indigo-50 to-indigo-100">
       <Helmet>
         <title>node 信息</title>
       </Helmet>
-      <div className="text-xl text-zinc-100">服务器配置：</div>
+      <div className="w-screen  h-14 border-b bg-slate-50">
+        <div className="flex py-2 h-14 w-28 justify-center items-center text-lg">服务器配置：</div>
+      </div>
       <ContentList data={data.os} />
-      <button
+      {/* <button
         onClick={onConnect}
         className="box-border flex w-10/12 justify-center  font-serif py-4 mb-8 m-auto rounded-sm bg-green-500 text-black-300 text-sm"
       >
@@ -34,7 +35,7 @@ const App = () => {
         className="box-border flex w-10/12 justify-center  font-serif py-4 m-auto rounded-sm bg-cyan-500 text-black-300 text-sm"
       >
         断开链接
-      </button>
+      </button> */}
     </div>
   );
 };
