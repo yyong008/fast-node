@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Outlet, Link } from "react-router-dom";
 
 // components
 import { Helmet } from "react-helmet";
-import ContentList from "./components/ContentList";
+import AppRouter from "./components/Router";
 
 // styles
 import "./index.css";
@@ -20,10 +21,14 @@ const App = () => {
       <Helmet>
         <title>node 信息</title>
       </Helmet>
-      <div className="w-screen  h-14 border-b bg-slate-50">
-        <div className="flex py-2 h-14 w-28 justify-center items-center text-lg">服务器配置：</div>
+      <div className="flex item-center w-screen  h-14 border-b bg-slate-50">
+        <div className="flex py-2 h-14 w-28 justify-center items-center text-lg">导航配置：</div>
+        <Link to="/" className="flex justify-center items-center mx-2 hover:text-orange-300">首页</Link>
+        <Link to="/process" className="flex justify-center items-center hover:text-orange-300">进程</Link>
       </div>
-      <ContentList data={data.os} />
+
+      <AppRouter data={data.os}/>
+      <Outlet />
       {/* <button
         onClick={onConnect}
         className="box-border flex w-10/12 justify-center  font-serif py-4 mb-8 m-auto rounded-sm bg-green-500 text-black-300 text-sm"
