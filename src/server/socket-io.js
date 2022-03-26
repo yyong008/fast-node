@@ -2,7 +2,7 @@ import { Server } from "socket.io";
 // import utils from "node-os-utils";
 
 import OSInfo from "./os";
-// import processInfo from "./process";
+import processInfo from "./process";
 
 const createSocketIO = (httpServer) => {
   const io = new Server(httpServer, {
@@ -18,6 +18,11 @@ const createSocketIO = (httpServer) => {
     socket.on("os-info", () => {
       socket.send({
         os: OSInfo,
+      });
+    });
+    socket.on("process-info", () => {
+      socket.send({
+        process: processInfo,
       });
     });
   });

@@ -1,12 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 
-import ContentList from "./ContentList";
-import Process from "./Process";
+import OsPage from "../pages/OsPage";
+import ProcessPage from "../pages/ProcessPage";
+
 const AppRouter = (props) => {
 	return (
     <Routes>
-      <Route path="/" element={<ContentList data={props.data} />}></Route>
-      <Route path="/process" element={<Process />}></Route>
+      <Route path="/" element={<OsPage/>}></Route>
+      <Route path="/process" element={<ProcessPage />}></Route>
     </Routes>
   );
 }
