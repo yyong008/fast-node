@@ -1,15 +1,15 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom'
 
-import OsPage from "../pages/OsPage";
-import ProcessPage from "../pages/ProcessPage";
+import OsPage from '../pages/OsPage'
+import ProcessPage from '../pages/ProcessPage'
 
 const AppRouter = (props) => {
-	return (
+  return (
     <Routes>
-      <Route path="/" element={<OsPage/>}></Route>
+      <Route path="/" element={<OsPage />}></Route>
       <Route path="/process" element={<ProcessPage />}></Route>
     </Routes>
-  );
+  )
 }
 
-export default AppRouter;
+export default AppRouter

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Cpu = (props) => {
   return (
@@ -11,7 +11,7 @@ const Cpu = (props) => {
       <div>time-sys: {props.times.sys}</div>
       <div>time-irq: {props.times.irq}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Cpu;
+export default Cpu

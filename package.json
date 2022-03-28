@@ -4,21 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "esno src/server/index.js",
+    "dev": "nodemon -w src/server/**/*  --exec esno src/server/index.ts",
     "dev:f": "vite dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "prettier --write ./src/**/*"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-os-utils": "^1.3.6"
+    "chokidar": "^3.5.3",
+    "chokidar-cli": "^3.0.0",
+    "node-os-utils": "^1.3.6",
+    "prettier": "^2.6.1"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^1.2.0",
     "autoprefixer": "^10.4.2",
     "esno": "^0.14.1",
     "express": "^4.17.3",
+    "morgan": "^1.10.0",
     "postcss": "^8.4.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

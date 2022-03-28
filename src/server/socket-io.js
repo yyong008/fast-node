@@ -1,31 +1,31 @@
-import { Server } from "socket.io";
+import { Server } from 'socket.io'
 // import utils from "node-os-utils";
 
-import OSInfo from "./os";
-import processInfo from "./process";
+import OSInfo from './os'
+import processInfo from './process'
 
 const createSocketIO = (httpServer) => {
   const io = new Server(httpServer, {
     cors: {
-      origin: "http://localhost:3000",
-      allowedHeaders: ["my-custom-header"],
+      origin: 'http://localhost:3000',
+      allowedHeaders: ['my-custom-header'],
       credentials: true,
     },
-  });
+  })
 
-  io.on("connection", (socket) => {
-    console.log("a user connected");
-    socket.on("os-info", () => {
+  io.on('connection', (socket) => {
+    console.log('a user connected')
+    socket.on('os-info', () => {
       socket.send({
         os: OSInfo,
-      });
-    });
-    socket.on("process-info", () => {
+      })
+    })
+    socket.on('process-info', () => {
       socket.send({
         process: processInfo,
-      });
-    });
-  });
-};
+      })
+    })
+  })
+}
 
-export default createSocketIO;
+export default createSocketIO

@@ -1,18 +1,17 @@
-import React from 'react';
-
+import React from 'react'
 
 // components
-import ContentList from '../components/ContentList';
+import ContentList from '../components/ContentList'
 
 // hooks
-import useProcessSoclet from '../hooks/useProcessSoclet';
+import useProcessSoclet from '../hooks/useProcessSoclet'
 
 const Process = () => {
-	const [data] = useProcessSoclet();
+  const [data] = useProcessSoclet()
 
-	console.log("process data",data)
+  console.log('process data', data)
 
-	return <ContentList data={data.process ?? []} />
+  return <ContentList data={data.process ?? []} />
 }
 
-export default Process;
+export default Process
